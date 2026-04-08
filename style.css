@@ -255,5 +255,54 @@ text-align:left;
 .menu.active{
 left:0;
 }
+.header-bar{
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.menu-toggle{
+position:absolute;
+left:15px;
+background:none;
+border:none;
+color:white;
+font-size:24px;
+cursor:pointer;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+gap:15px;
+}
+
+@media (max-width:768px){
+
+.menu{
+position:fixed;
+top:0;
+left:-260px;
+width:260px;
+height:100%;
+background:#2980b9;
+flex-direction:column;
+padding-top:80px;
+transition:0.3s;
+z-index:3000;
+}
+
+.menu a{
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,0.2);
+text-align:left;
+}
+
+.menu.active{
+left:0;
+}
+
+}
 
 }
