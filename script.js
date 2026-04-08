@@ -5,11 +5,10 @@ window.addEventListener("scroll", () => {
 
 let currentScroll = window.pageYOffset;
 
-if (currentScroll > lastScroll){
-header.style.transform = "translateY(-100%)";
-}
-else{
-header.style.transform = "translateY(0)";
+if(currentScroll > lastScroll && currentScroll > 100){
+header.classList.add("header-hidden");
+}else{
+header.classList.remove("header-hidden");
 }
 
 lastScroll = currentScroll;
