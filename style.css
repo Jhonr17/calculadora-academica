@@ -209,7 +209,7 @@ text-decoration:underline;
 }
 
 
-/* ---------- MENU / HEADER BAR ---------- */
+/* BARRA SUPERIOR */
 
 .header-bar{
 display:flex;
@@ -224,8 +224,6 @@ position:relative;
 display:none;
 position:absolute;
 left:15px;
-top:50%;
-transform:translateY(-50%);
 background:none;
 border:none;
 color:white;
@@ -242,55 +240,33 @@ gap:20px;
 margin-top:10px;
 }
 
-.menu a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-.menu a:hover{
-color:#f1c40f;
-}
-
-/* ---------- MENU MOVIL ---------- */
+/* MOVIL */
 
 @media (max-width:768px){
-
-/* mostrar boton hamburguesa */
 
 .menu-toggle{
 display:block;
 }
 
-/* ocultar menu arriba */
-
 .menu{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100%;
-background:#2980b9;
+display:none;
 flex-direction:column;
-padding-top:80px;
-transition:0.3s;
-z-index:3000;
+background:#2980b9;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
 }
-
-/* enlaces del menu */
-
-.menu a{
-padding:15px 20px;
-border-bottom:1px solid rgba(255,255,255,0.2);
-text-align:left;
-margin:0;
-}
-
-/* menu visible */
 
 .menu.active{
-left:0;
+display:flex;
+}
+
+.menu a{
+padding:15px;
+border-top:1px solid rgba(255,255,255,0.2);
+}
+
 }
 
 }
