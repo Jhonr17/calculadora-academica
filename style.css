@@ -191,3 +191,21 @@ input:focus{
     }
 
 }
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+font-size:14px;
+}
+
+footer a{
+color:#f1c40f;
+text-decoration:none;
+margin:0 5px;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
