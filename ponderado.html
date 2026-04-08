@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Promedio Ponderado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Calculadora de Promedio Ponderado</h1>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="promedio.html">Promedio</a>
+<a href="ponderado.html">Promedio Ponderado</a>
+</nav>
+
+</header>
+
+<main>
+
+<div id="notas">
+
+<div class="fila">
+
+<input type="number" class="nota" placeholder="Nota">
+
+<input type="number" class="peso" placeholder="Porcentaje">
+
+<button onclick="eliminarFila(this)">X</button>
+
+</div>
+
+</div>
+
+<br>
+
+<button onclick="agregarFila()">Agregar corte</button>
+
+<button onclick="calcularPonderado()">Calcular promedio</button>
+
+<h2 id="resultado"></h2>
+
+</main>
+
+<script>
+
+function agregarFila(){
+
+let contenedor = document.getElementById("notas");
+
+let fila = document.createElement("div");
+
+fila.className = "fila";
+
+fila.innerHTML = `
+<input type="number" class="nota" placeholder="Nota">
+<input type="number" class="peso" placeholder="Porcentaje">
+<button onclick="eliminarFila(this)">X</button>
+`;
+
+contenedor.appendChild(fila);
+
+}
+
+function eliminarFila(boton){
+
+boton.parentElement.remove();
+
+}
+
+function calcularPonderado(){
+
+let notas = document.querySelectorAll(".nota");
+let pesos = document.querySelectorAll(".peso");
+
+let total = 0;
+
+for(let i=0;i<notas.length;i++){
+
+let nota = Number(notas[i].value);
+let peso = Number(pesos[i].value)/100;
+
+total += nota * peso;
+
+}
+
+document.getElementById("resultado").innerText =
+"Promedio final: " + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

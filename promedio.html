@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora de Promedio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Calculadora de Promedio</h1>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="promedio.html">Promedio</a>
+<a href="ponderado.html">Promedio Ponderado</a>
+<a href="nota.html">Nota para aprobar</a>
+<a href="porcentaje.html">Porcentaje</a>
+<a href="gpa.html">GPA</a>
+</nav>
+
+<p>Ingresa tus notas para calcular tu promedio</p>
+
+</header>
+
+<main>
+
+<div id="notas">
+
+<div class="fila">
+<input type="number" class="nota" placeholder="Ingresa una nota">
+<button onclick="eliminarNota(this)">X</button>
+</div>
+
+</div>
+
+<br>
+
+<button onclick="agregarNota()">Agregar otra nota</button>
+
+<button onclick="calcularPromedio()">Calcular promedio</button>
+
+<h2 id="resultado"></h2>
+
+</main>
+
+<script>
+
+function agregarNota(){
+
+let contenedor = document.getElementById("notas");
+
+let fila = document.createElement("div");
+fila.className = "fila";
+
+let input = document.createElement("input");
+input.type = "number";
+input.placeholder = "Ingresa una nota";
+input.className = "nota";
+
+let boton = document.createElement("button");
+boton.innerText = "X";
+boton.onclick = function(){
+eliminarNota(boton);
+};
+
+fila.appendChild(input);
+fila.appendChild(boton);
+
+contenedor.appendChild(fila);
+
+}
+
+function eliminarNota(boton){
+
+boton.parentElement.remove();
+
+}
+
+function calcularPromedio(){
+
+let notas = document.querySelectorAll(".nota");
+
+if(notas.length === 0){
+
+document.getElementById("resultado").innerText =
+"Debes ingresar al menos una nota.";
+
+return;
+
+}
+
+let suma = 0;
+
+notas.forEach(function(nota){
+
+suma += Number(nota.value);
+
+});
+
+let promedio = suma / notas.length;
+
+let mensaje = "";
+
+if(promedio >= 3){
+
+mensaje = "Aprobado";
+
+}else{
+
+mensaje = "Reprobado";
+
+}
+
+document.getElementById("resultado").innerText =
+"Promedio: " + promedio.toFixed(2) + " - " + mensaje;
+
+}
+
+</script>
+
+</body>
+</html>

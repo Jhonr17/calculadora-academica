@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora de GPA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Calculadora de GPA</h1>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="promedio.html">Promedio</a>
+<a href="ponderado.html">Promedio Ponderado</a>
+<a href="nota.html">Nota para aprobar</a>
+<a href="porcentaje.html">Porcentaje</a>
+<a href="gpa.html">GPA</a>
+</nav>
+
+</header>
+
+<main>
+
+<p>Calcula tu GPA ingresando tus notas y créditos de cada materia.</p>
+
+<div id="materias">
+
+<div class="fila">
+<input type="number" class="nota" placeholder="Nota">
+<input type="number" class="creditos" placeholder="Créditos">
+<button onclick="eliminarFila(this)">X</button>
+</div>
+
+</div>
+
+<br>
+
+<button onclick="agregarFila()">Agregar materia</button>
+<button onclick="calcularGPA()">Calcular GPA</button>
+
+<h2 id="resultado"></h2>
+
+</main>
+
+<script>
+
+function agregarFila(){
+let contenedor = document.getElementById("materias");
+
+let fila = document.createElement("div");
+fila.className = "fila";
+fila.innerHTML = `
+<input type="number" class="nota" placeholder="Nota">
+<input type="number" class="creditos" placeholder="Créditos">
+<button onclick="eliminarFila(this)">X</button>
+`;
+
+contenedor.appendChild(fila);
+}
+
+function eliminarFila(boton){
+boton.parentElement.remove();
+}
+
+function calcularGPA(){
+let notas = document.querySelectorAll(".nota");
+let creditos = document.querySelectorAll(".creditos");
+
+let suma = 0;
+let totalCreditos = 0;
+
+for(let i=0; i<notas.length; i++){
+let nota = Number(notas[i].value);
+let credito = Number(creditos[i].value);
+suma += nota * credito;
+totalCreditos += credito;
+}
+
+if(totalCreditos === 0){
+document.getElementById("resultado").innerText = "Debes ingresar créditos.";
+return;
+}
+
+let gpa = suma / totalCreditos;
+
+document.getElementById("resultado").innerText =
+"GPA: " + gpa.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>

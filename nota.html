@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nota necesaria para aprobar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Calculadora de Nota Necesaria</h1>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="promedio.html">Promedio</a>
+<a href="ponderado.html">Promedio Ponderado</a>
+<a href="nota.html">Nota para aprobar</a>
+</nav>
+
+</header>
+
+<main>
+
+<p>Calcula qué nota necesitas en el examen final para aprobar.</p>
+
+<br>
+
+<input type="number" id="notaActual" placeholder="Promedio actual">
+
+<br><br>
+
+<input type="number" id="porcentajeFinal" placeholder="Porcentaje del examen final">
+
+<br><br>
+
+<input type="number" id="notaMinima" placeholder="Nota mínima para aprobar (ej: 3)">
+
+<br><br>
+
+<button onclick="calcularNota()">Calcular nota necesaria</button>
+
+<h2 id="resultado"></h2>
+
+</main>
+
+<script>
+
+function calcularNota(){
+
+let actual = Number(document.getElementById("notaActual").value);
+let porcentaje = Number(document.getElementById("porcentajeFinal").value)/100;
+let objetivo = Number(document.getElementById("notaMinima").value);
+
+let necesario = (objetivo - actual*(1-porcentaje)) / porcentaje;
+
+document.getElementById("resultado").innerText =
+"Necesitas sacar: " + necesario.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

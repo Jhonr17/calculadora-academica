@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora de Porcentaje</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Calculadora de Porcentaje</h1>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="promedio.html">Promedio</a>
+<a href="ponderado.html">Promedio Ponderado</a>
+<a href="nota.html">Nota para aprobar</a>
+<a href="porcentaje.html">Porcentaje</a>
+</nav>
+
+</header>
+
+<main>
+
+<p>Calcula el porcentaje de respuestas correctas en un examen.</p>
+
+<br>
+
+<input type="number" id="correctas" placeholder="Número de respuestas correctas">
+
+<br><br>
+
+<input type="number" id="total" placeholder="Número total de preguntas">
+
+<br><br>
+
+<button onclick="calcularPorcentaje()">Calcular porcentaje</button>
+
+<h2 id="resultado"></h2>
+
+</main>
+
+<script>
+
+function calcularPorcentaje(){
+
+let correctas = Number(document.getElementById("correctas").value);
+let total = Number(document.getElementById("total").value);
+
+if(total === 0){
+document.getElementById("resultado").innerText = "El total no puede ser cero.";
+return;
+}
+
+let porcentaje = (correctas / total) * 100;
+
+document.getElementById("resultado").innerText =
+"Porcentaje: " + porcentaje.toFixed(2) + "%";
+
+}
+
+</script>
+
+</body>
+</html>
