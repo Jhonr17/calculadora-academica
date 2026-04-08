@@ -14,16 +14,14 @@ header{
 background: linear-gradient(90deg, #3498db, #2980b9);
 color:white;
 padding:20px 0;
-position:fixed;
+position:sticky;
 top:0;
-left:0;
-width:100%;
 z-index:1000;
-transition:transform 0.3s ease;
+transition:padding 0.3s ease;
 }
 
-.header-hidden{
-transform: translateY(-100%);
+header.header-small{
+padding:8px 0;
 }
 /* ----------------- Navegación ----------------- */
 
@@ -48,7 +46,7 @@ nav a:hover{
 main{
 max-width:900px;
 margin:auto;
-padding:140px 20px 40px 20px;
+padding:40px 20px;
 }
 /* ----------------- Herramientas / Tarjetas ----------------- */
 
