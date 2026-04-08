@@ -22,6 +22,9 @@ z-index:1000;
 transition:transform 0.3s ease;
 }
 
+.header-hidden{
+transform: translateY(-100%);
+}
 /* ----------------- Navegación ----------------- */
 
 nav{
@@ -45,7 +48,7 @@ nav a:hover{
 main{
 max-width:900px;
 margin:auto;
-padding:120px 20px 40px 20px;
+padding:140px 20px 40px 20px;
 }
 /* ----------------- Herramientas / Tarjetas ----------------- */
 
