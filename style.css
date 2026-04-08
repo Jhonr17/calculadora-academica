@@ -11,17 +11,15 @@ body{
 /* ----------------- Header ----------------- */
 
 header{
-    background: linear-gradient(90deg, #3498db, #2980b9);
-    color:white;
-    padding:20px 0;
-    position: sticky;
-    top:0;
-    z-index:1000;
-}
-
-header h1{
-    margin:0;
-    font-size:2rem;
+background: linear-gradient(90deg, #3498db, #2980b9);
+color:white;
+padding:20px 0;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+transition:transform 0.3s ease;
 }
 
 /* ----------------- Navegación ----------------- */
@@ -45,11 +43,10 @@ nav a:hover{
 /* ----------------- Main ----------------- */
 
 main{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
+max-width:900px;
+margin:auto;
+padding:120px 20px 40px 20px;
 }
-
 /* ----------------- Herramientas / Tarjetas ----------------- */
 
 .tools{
