@@ -207,3 +207,45 @@ margin:0 5px;
 footer a:hover{
 text-decoration:underline;
 }
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:24px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+/* MOVIL */
+
+@media (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.menu{
+display:none;
+flex-direction:column;
+background:#2980b9;
+padding:10px 0;
+}
+
+.menu a{
+display:block;
+padding:10px;
+margin:0;
+}
+
+.menu.active{
+display:flex;
+}
+
+}
