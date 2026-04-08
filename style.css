@@ -1,4 +1,5 @@
 /* ----------------- General ----------------- */
+
 body{
     font-family: Arial, sans-serif;
     margin:0;
@@ -8,6 +9,7 @@ body{
 }
 
 /* ----------------- Header ----------------- */
+
 header{
     background: linear-gradient(90deg, #3498db, #2980b9);
     color:white;
@@ -21,6 +23,8 @@ header h1{
     margin:0;
     font-size:2rem;
 }
+
+/* ----------------- Navegación ----------------- */
 
 nav{
     margin-top:10px;
@@ -39,11 +43,15 @@ nav a:hover{
 }
 
 /* ----------------- Main ----------------- */
+
 main{
-    padding:40px;
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
 }
 
 /* ----------------- Herramientas / Tarjetas ----------------- */
+
 .tools{
     display:flex;
     flex-wrap:wrap;
@@ -64,14 +72,14 @@ main{
     text-decoration:none;
     color:#333;
     font-weight:bold;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    transition:transform 0.3s, box-shadow 0.3s;
     text-align:center;
 }
 
 .tools a:hover{
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 15px 25px rgba(0,0,0,0.25);
     background:#3498db;
     color:white;
 }
@@ -79,9 +87,11 @@ main{
 .tools i{
     margin-bottom:10px;
     color:#3498db;
+    font-size:30px;
 }
 
 /* ----------------- Botones ----------------- */
+
 button{
     background:#3498db;
     color:white;
@@ -96,10 +106,11 @@ button{
 
 button:hover{
     background:#2980b9;
-    transform: scale(1.05);
+    transform:scale(1.05);
 }
 
 /* ----------------- Inputs ----------------- */
+
 input{
     padding:10px;
     margin:5px 0;
@@ -117,8 +128,10 @@ input:focus{
 }
 
 /* ----------------- Filas para calculadoras ----------------- */
+
 .fila{
     display:flex;
+    flex-wrap:wrap;
     justify-content:center;
     align-items:center;
     gap:10px;
@@ -126,6 +139,7 @@ input:focus{
 }
 
 /* ----------------- Resultado ----------------- */
+
 #resultado{
     margin-top:20px;
     font-size:1.5rem;
@@ -133,18 +147,31 @@ input:focus{
 }
 
 /* ----------------- Responsive ----------------- */
+
 @media (max-width:768px){
-    main{
-        padding:20px;
-    }
 
     header h1{
-        font-size:1.5rem;
+        font-size:1.4rem;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     nav a{
-        display:block;
-        margin:5px 0;
+        margin:5px 8px;
+        font-size:14px;
+    }
+
+    main{
+        padding:20px 15px;
+    }
+
+    .tools{
+        flex-direction:column;
+        align-items:center;
     }
 
     .tools a{
@@ -156,34 +183,11 @@ input:focus{
     }
 
     input{
-        width:80%;
+        width:90%;
     }
-} 
-/* MENU RESPONSIVE */
-@media (max-width:768px){
 
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-nav a{
-margin:5px 8px;
-font-size:14px;
-}
-
-header h1{
-font-size:20px;
-}
-
-.tools{
-flex-direction:column;
-align-items:center;
-}
-
-.tools a{
-width:90%;
-}
+    button{
+        width:90%;
+    }
 
 }
